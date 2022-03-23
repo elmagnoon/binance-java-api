@@ -1,5 +1,6 @@
 package com.binance.api.client;
 
+import com.binance.api.client.constant.BinanceApiConstants;
 import com.binance.api.client.domain.TransferType;
 import com.binance.api.client.domain.account.*;
 import com.binance.api.client.domain.account.request.CancelOrderRequest;
@@ -65,6 +66,15 @@ public interface BinanceApiAsyncMarginRestClient {
    * @return a list of trades
    */
   void getMyTrades(String symbol, BinanceApiCallback<List<Trade>> callback);
+
+  /**
+   * Change leverage for a specified symbol
+   *
+   * @param symbol symbol to change leverage of
+   * @param leverage leverage value
+   * @return the callback that handles the response
+   */
+  void changeLeverage(String symbol, int leverage, BinanceApiCallback<ChangeLeverageResponse> callback);
 
   // User stream endpoints
 

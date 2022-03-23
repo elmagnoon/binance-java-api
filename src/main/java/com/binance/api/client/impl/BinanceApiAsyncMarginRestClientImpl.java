@@ -71,6 +71,11 @@ public class BinanceApiAsyncMarginRestClientImpl implements BinanceApiAsyncMargi
         binanceApiService.getMyTrades(symbol, null, null, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis()).enqueue(new BinanceApiCallbackAdapter<>(callback));
     }
 
+    @Override
+    public void changeLeverage(String symbol, int leverage, BinanceApiCallback<ChangeLeverageResponse> callback) {
+        binanceApiService.changeLeverage(symbol, leverage, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis()).enqueue(new BinanceApiCallbackAdapter<>(callback));
+    }
+
     // user stream endpoints
 
     @Override

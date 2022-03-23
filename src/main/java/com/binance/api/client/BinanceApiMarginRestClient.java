@@ -53,6 +53,15 @@ public interface BinanceApiMarginRestClient {
      */
     List<Trade> getMyTrades(String symbol);
 
+    /**
+     * Change leverage for a specified symbol
+     *
+     * @param symbol symbol to change leverage of
+     * @param leverage leverage value
+     * @return a response containing details about the new leverage
+     */
+    ChangeLeverageResponse changeLeverage(String symbol, int leverage);
+
     // User stream endpoints
 
     /**

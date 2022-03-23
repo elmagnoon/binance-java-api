@@ -63,6 +63,11 @@ public class BinanceApiMarginRestClientImpl implements BinanceApiMarginRestClien
         return executeSync(binanceApiService.getMyTrades(symbol, null, null, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis()));
     }
 
+    @Override
+    public ChangeLeverageResponse changeLeverage(String symbol, int leverage) {
+        return executeSync(binanceApiService.changeLeverage(symbol, leverage, BinanceApiConstants.DEFAULT_RECEIVING_WINDOW, System.currentTimeMillis()));
+    }
+
     // user stream endpoints
 
     @Override
